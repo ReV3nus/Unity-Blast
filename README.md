@@ -10,19 +10,38 @@ In recent years, NVIDIA has integrated `Blast` into `Omniverse` as part of the P
 
 However, Blast is a `C++` project. This makes it highly compatible with C++ projects like Houdini and Unreal Engine, but less so with C# projects like Unity. While Blast has C-style APIs consisting of stateless functions at higher levels, some lower-level methods lack exposed C-style APIs for various reasons. 
 
-Although there are many excellent projects available, such as [`unity-fracture`](https://github.com/ElasticSea/unity-fracture), these projects have not been updated for a long time, and the Blast versions they rely on are somewhat outdated.
+Although there are many excellent projects available, such as [`unity-fracture`](https://github.com/ElasticSea/unity-fracture) and the [forum thread](https://discussions.unity.com/t/nvidia-blast/665733), these projects have not been updated for a long time, and the Blast versions they rely on are somewhat outdated.
 
 Therefore, in this project, I will be working on porting the Blast method from the latest version of `PhysX` and `Blast`*(Blast SDK version 5.0.6)*, including exposing the C-style interface and implementing the C# wrapper function, so that Blast's efficient and excellent methods for simulating breakage and fragmentation can be used in Unity.
 
 
 ## Features
 
+- Complete rewrite and extention of the wrapper scripts and interfaces to support the latest Unity and `Blast`.
+- Some of the original logic has been rewritten and extended to support the acquisition of neighbor relationships and surface cracks with very low overhead.
+- Created **Blast Pattern** fracturing method with configurable params.
+- ...
+
 ## Usage
+
+There is already a x64 version of libraries. You can also use following instructions to get your compiled libraries of corresponding operating system:
+
+- Put the `\blast` folder to `\PhysX\blast` or `\blast` and replace existing files
+- Open the `\blast` folder and build SDK according to [Blast Repo](https://github.com/NVIDIA-Omniverse/PhysX/tree/main/blast)
+- Put all compiled dlls to your Unity project. The file strcture should be similar to the folder `\PhysXTools\Blast` in this repository.
+- You can replace folder `x64` with your own operating systems, but don't forget to modify names and path in wrapper scripts.
+
+After that, you should be able to use all of the functions in these wrapper scripts and create your own effects.
 
 ## Examples
 
-Thanks to repository (unity-fracture)[https://github.com/ElasticSea/unity-fracture] and the (forum thread)[https://discussions.unity.com/t/nvidia-blast/665733], I have implemented their methods using the newest Blast.
+I've implemented another Unity project which used these scripts to implement more elaborate shattering effects. You can visit it here:
 
-Here is the method *voronoiFracturing*'s effect in Unity.
+[**Better Unity Fracture**](https://github.com/ReV3nus/Better-Unity-Fracture/tree/main)
 
-<img width="1111" height="715" alt="image" src="https://github.com/user-attachments/assets/b7a1a1c9-0973-422f-b8ca-a27deae0e3da" />
+
+Here are some pictures:
+
+**Basic Voronoi Uniformly Fracturing:**
+
+<img height="600" alt="image" src="https://github.com/user-attachments/assets/b7a1a1c9-0973-422f-b8ca-a27deae0e3da" />
