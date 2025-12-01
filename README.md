@@ -14,6 +14,9 @@ Although there are many excellent projects available, such as [`unity-fracture`]
 
 Therefore, in this project, I will be working on porting the Blast method from the latest version of `PhysX` and `Blast`*(Blast SDK version 5.0.6)*, including exposing the C-style interface and implementing the C# wrapper function, so that Blast's efficient and excellent methods for simulating breakage and fragmentation can be used in Unity.
 
+Theoretically, this can be used to break any object that could originally be supported by Blast [list here](https://nvidia-omniverse.github.io/PhysX/blast/docs/api/introduction.html#support-model) as long as it has readable meshes and uvs.
+
+
 
 ## Features
 
@@ -44,4 +47,8 @@ Here are some pictures:
 
 **Basic Voronoi Uniformly Fracturing:**
 
-<img height="600" alt="image" src="https://github.com/user-attachments/assets/b7a1a1c9-0973-422f-b8ca-a27deae0e3da" />
+<img height="800" alt="image" src="https://github.com/user-attachments/assets/b7a1a1c9-0973-422f-b8ca-a27deae0e3da" />
+
+**Acquisition of blasting patterns and crack data**
+
+<img height="800" alt="image" src="https://github.com/user-attachments/assets/f92d1347-cfa0-47cf-b1ea-7cc263bc5c6d" />
